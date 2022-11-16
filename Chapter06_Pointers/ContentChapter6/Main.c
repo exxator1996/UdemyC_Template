@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void binom(int a, int b, int *c)
+{
+    *c = (a + b) * (a + b);
+}
+
 int main()
 {
     int a = 4;
@@ -8,6 +13,7 @@ int main()
 
     printf("a=%d, b=%d\n", a, b);
     printf("Call binom function!\n");
+    binom(a, b, &c);
     printf("c=%d\n", c);
 
     return 0;
