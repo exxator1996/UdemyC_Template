@@ -77,6 +77,21 @@ int **freeMatrix(int **matrix, unsigned int num_rows)
     return NULL;
 }
 
+int **transposeMatrix(int **matrix, unsigned int num_rows, unsigned int num_cols){
+    int **matrix_transpose = createMatrix(num_cols, num_rows, 0);
+
+    for (int i = 0; i < num_rows; i++)
+    {
+        for (int j = 0; j < num_cols; j++)
+        {
+            matrix_transpose[j][i] = matrix[i][j];
+        }
+    }
+
+    return matrix_transpose;
+
+}
+
 int main()
 {
     unsigned int num_rows = 2;
