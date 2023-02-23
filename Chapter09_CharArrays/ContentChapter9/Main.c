@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 char *join(char *delimiter, char **list)
 {
     if(delimiter == NULL || list == NULL)
