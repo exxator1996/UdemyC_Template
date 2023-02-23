@@ -5,7 +5,7 @@
 
 char *join(char *delimiter, char **list)
 {
-    if(delimiter == NULL || list == NULL)
+    if (delimiter == NULL || list == NULL)
         return NULL;
 
 
@@ -25,7 +25,7 @@ char *join(char *delimiter, char **list)
         joinedString = (char *)realloc(joinedString, joinStringSize * sizeof(char));
         strcat(joinedString, *list);
 
-        if(*(list+1) != NULL)
+        if (*(list + 1) != NULL)
         {
             joinStringSize += strlen(delimiter) + 1;
             joinedString = (char *)realloc(joinedString, joinStringSize * sizeof(char));
