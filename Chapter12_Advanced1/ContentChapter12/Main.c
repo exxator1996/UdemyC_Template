@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
             return -1;
         }
         char *input_filename = argv[1];
+        printf("%s\n",input_filename);
         int inputLength = atoi(argv[2]);
     #endif
     char input_filepath[200] = "/mnt/c/Users/niklas/Documents/CLernen/UdemyC_Template/Chapter12_Advanced1/ContentChapter12/";
@@ -42,7 +43,7 @@ int main(int argc, char *argv[])
 
     char line[20];
 
-    FILE *fp = fopen(input_filename,"r");
+    FILE *fp = fopen(input_filepath,"r");
     if (fp == NULL)
     {
         printf("file input open failed\n");
@@ -59,7 +60,7 @@ int main(int argc, char *argv[])
 
     qsort(&input_values,(long unsigned int)inputLength,sizeof(int),comp);
 
-    fp = fopen(input_filename,"w");
+    fp = fopen(input_filepath,"w");
     if (fp == NULL)
     {
         printf("file output open failed\n");
