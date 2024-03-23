@@ -15,18 +15,26 @@ int getNumberFromUser()
 
 int max(int number_a, int number_b)
 {
-    if (number_a > number_b)
+    if (number_a >= number_b)
+    {
         return number_a;
+    }
     else
+    {
         return number_b;
+    }
 }
 
 int min(int number_a, int number_b)
 {
-    if (number_a < number_b)
+    if (number_a <= number_b)
+    {
         return number_a;
+    }
     else
+    {
         return number_b;
+    }
 }
 
 float mean(int number_a, int number_b)
