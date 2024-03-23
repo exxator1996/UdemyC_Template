@@ -208,3 +208,94 @@ float maxVector(const Vector *vector)
 
     return current_max;
 }
+
+Vector *addVectors(const Vector *vec1, const Vector *vec2)
+{
+    if (vec1->length != vec2->length)
+    {
+        return NULL;
+    }
+
+    Vector *resultVector = createVector(vec1->length, 0);
+
+    if (resultVector == NULL)
+    {
+        return NULL;
+    }
+
+    for (unsigned int i = 0; i < resultVector->length; i++)
+    {
+        resultVector->data[i] = vec1->data[i] + vec2->data[i];
+    }
+    return resultVector;
+}
+
+Vector *subVectors(const Vector *vec1, const Vector *vec2)
+{
+    if (vec1->length != vec2->length)
+    {
+        return NULL;
+    }
+
+    Vector *resultVector = createVector(vec1->length, 0);
+
+    if (resultVector == NULL)
+    {
+        return NULL;
+    }
+
+    for (unsigned int i = 0; i < resultVector->length; i++)
+    {
+        resultVector->data[i] = vec1->data[i] - vec2->data[i];
+    }
+    return resultVector;
+}
+
+float multiplyVectors(const Vector *vec1, const Vector *vec2)
+{
+    if (vec1->length != vec2->length)
+    {
+        return 0;
+    }
+
+    float result = 0;
+
+    for (unsigned int i = 0; i < vec1->length; i++)
+    {
+        result += vec1->data[i] * vec2->data[i];
+    }
+    return result;
+}
+
+Vector *multiplyScalar(const Vector *vec, const float scalar)
+{
+
+    Vector *resultVector = createVector(vec->length, 0);
+
+    if (resultVector == NULL)
+    {
+        return NULL;
+    }
+
+    for (unsigned int i = 0; i < resultVector->length; i++)
+    {
+        resultVector->data[i] = vec->data[i] * scalar;
+    }
+    return resultVector;
+}
+
+Vector *divideScalar(const Vector *vec, const float scalar)
+{
+    Vector *resultVector = createVector(vec->length, 0);
+
+    if (resultVector == NULL)
+    {
+        return NULL;
+    }
+
+    for (unsigned int i = 0; i < resultVector->length; i++)
+    {
+        resultVector->data[i] = vec->data[i] / scalar;
+    }
+    return resultVector;
+}
