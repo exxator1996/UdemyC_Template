@@ -5,8 +5,9 @@ int main()
 {
     uint64_t age, days, hours, minutes, seconds;
 
-    printf("Enter your age in years: ");
-    scanf("%lu",&age);
+
+    printf("Bitte gib dein Alter ein: ");
+    scanf("%d", &age);
 
     days = age * 365;
     hours = days * 24;
