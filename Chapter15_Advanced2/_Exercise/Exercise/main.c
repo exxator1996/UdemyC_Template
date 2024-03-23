@@ -31,6 +31,22 @@ void my_printf(char *format, ...)
                 sprintf(buffer, "%d", value);
                 fputs(buffer, stdout);
             }
+            else if (*format == 'f')
+            {
+                float value = (float)va_arg(args, double);
+                char buffer[64];
+                memset(buffer, '\0', 64);
+                sprintf(buffer, "%.16f", value);
+                fputs(buffer, stdout);
+            }
+            else if (*format == 'l' && *(++format) == 'f')
+            {
+                double value = va_arg(args, double);
+                char buffer[64];
+                memset(buffer, '\0', 64);
+                sprintf(buffer, "%.16lf", value);
+                fputs(buffer, stdout);
+            }
             else
             {
                 putchar(*format);
@@ -49,8 +65,8 @@ void my_printf(char *format, ...)
 
 int main()
 {
-    printf("%c %d %s\n", 'a', 90, "abc");
-    my_printf("%c %d %s\n", 'a', 90, "abc");
+    printf("%c %d %s %f %lf\n", 'a', 90, "abc", 10.3f, 10.3);
+    my_printf("%c %d %s %f %lf\n", 'a', 90, "abc", 10.3f, 10.3);
 
     return 0;
 }
