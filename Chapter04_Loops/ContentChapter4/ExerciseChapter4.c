@@ -2,23 +2,31 @@
 
 int main()
 {
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i <= 5; i++)
     {
-        for (int j = 0; j < 6; j++)
+        for (int j = 0; j <= 5; j++)
         {
-            if(j==0)
-                printf("<");
-            else if(j==5)
-                printf("\t>\n");
+            if (j == 0)
+            {
+                printf("<\t");
+            }
+            else if (j == 5)
+            {
+                printf(">\n");
+            }
             else if (i == 0)
-                printf("\t  ^\t");
+            {
+                printf("  ^\t");
+            }
             else if (i == 5)
-                printf("\t  v\t");
+            {
+                printf("  v\t");
+            }
             else
-                printf("\t(%i,%i)\t",i,j);
-
+            {
+                printf("(%d,%d)\t", i, j);
+            }
         }
-
     }
 
     return 0;
