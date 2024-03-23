@@ -9,7 +9,9 @@
 
 typedef struct dynamic_array
 {
-    // ...
+    unsigned int length;
+    unsigned int capacity;
+    float *data;
 } dynamic_array_t;
 
 /**********************/
